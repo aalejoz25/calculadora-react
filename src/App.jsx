@@ -16,11 +16,12 @@ function App() {
     ) {
       alert("Ingrese primero un numero");
     } else if (
-      input.charAt(input.length - 1) == "+" ||
-      input.charAt(input.length - 1) == "-" ||
-      input.charAt(input.length - 1) == "*" ||
-      input.charAt(input.length - 1) == "/" ||
-      input.charAt(input.length - 1) == "."
+      (input.charAt(input.length - 1) == "+" ||
+        input.charAt(input.length - 1) == "-" ||
+        input.charAt(input.length - 1) == "*" ||
+        input.charAt(input.length - 1) == "/" ||
+        input.charAt(input.length - 1) == ".") &&
+      (val == "+" || val == "-" || val == "*" || val == "/" || val == ".")
     ) {
       alert("No insgrese dos operadores seguidos");
     } else {
@@ -29,7 +30,7 @@ function App() {
   };
   const calcResult = () => {
     if (input) {
-      setInput(evaluate(input));
+      setInput(evaluate(input).toString());
     } else {
       alert("Porfavor ingrese valores");
     }
